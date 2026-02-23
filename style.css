@@ -1,0 +1,126 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --grey500: hsl(234, 12%, 34%);
+  --grey400: hsl(212, 6%, 44%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px 16px;
+}
+
+.opening {
+  color: var(--grey400);
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: clamp(40px, 6vw, 80px);
+  margin-bottom: clamp(40px, 6vw, 70px);
+}
+
+.opening .headliner {
+  color: var(--grey400);
+  font-weight: 200;
+  margin-bottom: 5px;
+}
+
+.opening .feature {
+  color: var(--grey500);
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.container {
+  max-width: 1100px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
+  grid-template-rows: 1fr 1fr;
+  gap: 35px;
+}
+
+.container .cyan {
+  grid-row: span 2;
+  align-self: center;
+  border-top: 5px solid var(--cyan);
+}
+
+.container .blue {
+  grid-row: span 2;
+  align-self: center;
+  border-top: 5px solid var(--blue);
+}
+
+.container .red {
+  border-top: 5px solid var(--red);
+}
+
+.container .orange {
+  border-top: 5px solid var(--orange);
+}
+
+.container .card {
+  padding: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.container img {
+  width: 60px;
+  align-self: flex-end;
+}
+
+.container h2 {
+  color: var(--grey500);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.container p {
+  color: var(--grey400);
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .container .cyan,
+  .container .blue {
+    grid-row: auto;
+    align-self: stretch;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
